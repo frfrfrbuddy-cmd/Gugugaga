@@ -1,0 +1,18 @@
+-- Delta Executor Mobile Compatible Unlock Script (F3X / BTools Selectable Fix)
+local success, err = pcall(function()
+    local count = 0
+    
+    for _, part in ipairs(workspace:GetDescendants()) do
+        if part:IsA("BasePart") then
+            -- Set Locked to false so F3X and building tools can select every part
+            part.Locked = false
+            count = count + 1
+        end
+    end
+    
+    print("Successfully unlocked " .. count .. " parts for BTools selection!")
+end)
+
+if not success then
+    warn("Script error: " .. tostring(err))
+end
